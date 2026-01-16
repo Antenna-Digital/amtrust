@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Filter - Finsweet v2</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="portfolio_filters">
+        <div>Filter by</div>
+        <form id="wf-form-Filter-Form" name="wf-form-Filter-Form" data-name="Filter Form" method="get" fs-cmsfilter-element="filters" class="filter-form">
+            <div data-delay="0" data-hover="false" fs-selectcustom-hideinitial="true" fs-selectcustom-element="dropdown" class="fs-selectcustom_dropdown helper filter-select-field w-dropdown">
+                <div class="fs-selectcustom_dropdown-toggle w-dropdown-toggle">
+                    <div class="fs-selectcustom_icon w-icon-dropdown-toggle"></div>
+                    <div>By Location</div>
+                </div>
+                <div class="fs-selectcustom_dropdown-list w-dropdown-list">
+                    <select class="select-field-2 w-select" fs-cmsfilter-instance="location" fs-cmsfilter-field="location" name="location" fs-cmsfilter-element="select" id="location-select">
+                        <option value="">By Location</option>
+                        <option value="Florida">Florida</option>
+                        <option value="Illinois">Illinois</option>
+                        <option value="New York">New York</option>
+                        <option value="Ohio">Ohio</option>
+                        <option value="Arizona">Arizona</option>
+                    </select>
+                    <a fs-selectcustom-element="clear" href="#" class="clear_link_block w-inline-block w--current">
+                        <div>&lt; Clear Selection</div>
+                    </a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Florida</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Illinois</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">New York</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Ohio</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Arizona</a>
+                </div>
+            </div>
+            
+            <div data-delay="0" data-hover="false" fs-selectcustom-hideinitial="true" fs-selectcustom-element="dropdown" class="fs-selectcustom_dropdown helper filter-select-field w-dropdown">
+                <div class="fs-selectcustom_dropdown-toggle w-dropdown-toggle">
+                    <div class="fs-selectcustom_icon w-icon-dropdown-toggle"></div>
+                    <div>By Type</div>
+                </div>
+                <div class="fs-selectcustom_dropdown-list w-dropdown-list">
+                    <select class="select-field-2 w-select" fs-cmsfilter-instance="type" fs-cmsfilter-field="type" name="type" fs-cmsfilter-element="select" id="type-select">
+                        <option value="">By Type</option>
+                        <option value="Residential">Residential</option>
+                        <option value="Commercial">Commercial</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Mixed-Use">Mixed-Use</option>
+                    </select>
+                    <a fs-selectcustom-element="clear" href="#" class="clear_link_block w-inline-block w--current">
+                        <div>&lt; Clear Selection</div>
+                    </a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Residential</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Commercial</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Industrial</a>
+                    <a href="#" class="fs-selectcustom_link w-dropdown-link">Mixed-Use</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Result text that will be dynamically updated -->
+    <div class="filter-text">Loading...</div>
+
+    <!-- Portfolio items container with sample items for testing -->
+    <div class="portfolio-list" fs-cmsfilter-element="list">
+        <!-- Sample portfolio items for testing -->
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">Florida</div>
+            <div class="project-type">Residential</div>
+            <div class="project-content">
+                <h3>Florida Residential Project</h3>
+                <p>A beautiful residential property in Florida.</p>
+            </div>
+        </div>
+      
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">New York</div>
+            <div class="project-type">Commercial</div>
+            <div class="project-content">
+                <h3>New York Commercial Project</h3>
+                <p>A modern commercial building in New York.</p>
+            </div>
+        </div>
+      
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">Illinois</div>
+            <div class="project-type">Industrial</div>
+            <div class="project-content">
+                <h3>Illinois Industrial Project</h3>
+                <p>An industrial facility in Illinois.</p>
+            </div>
+        </div>
+      
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">Arizona</div>
+            <div class="project-type">Mixed-Use</div>
+            <div class="project-content">
+                <h3>Arizona Mixed-Use Project</h3>
+                <p>A mixed-use development in Arizona.</p>
+            </div>
+        </div>
+      
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">Ohio</div>
+            <div class="project-type">Residential</div>
+            <div class="project-content">
+                <h3>Ohio Residential Project</h3>
+                <p>A cozy residential home in Ohio.</p>
+            </div>
+        </div>
+      
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">Florida</div>
+            <div class="project-type">Commercial</div>
+            <div class="project-content">
+                <h3>Florida Commercial Project</h3>
+                <p>A commercial space in sunny Florida.</p>
+            </div>
+        </div>
+      
+        <div class="portfolio-item" fs-cmsfilter-element="item">
+            <div class="project-location">Illinois</div>
+            <div class="project-type">Industrial</div>
+            <div class="project-content">
+                <h3>Illinois Industrial Project</h3>
+                <p>An industrial facility in Illinois.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the updated scripts -->
+    <script src="../scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+# Instructions
+This is external javascipt and css sheet for webflow.
+
+## Environment
+- webflow project: amtrust
+- serving local files for dev
+- serving files on github for production
+- when asking for a new feature. if there is html, please put in a folder with the feature name and a index.html file with the html only so i can get the structure. we should not be using css to style unless specificed. the styling will happen on webflow where you will not have access to.
+
+## swiper js
+- swiper js is used for sliders. please use swiper js for sliders.
+- swiper is included on webflow already. you will only be initializing the swiper code.
+- example of how i want a swiper code to be written.
+
+```javascript
+  // Find all news sections and initialize a Swiper for each
+  const newsSections = document.querySelectorAll(".news-section");
+
+  newsSections.forEach(function (section) {
+    const swiperContainer = section.querySelector(".news-slider");
+    const nextButton = section.querySelector(".news-swiper-button-next");
+    const prevButton = section.querySelector(".news-swiper-button-prev");
+
+    if (!swiperContainer) return;
+
+    const swiper = new Swiper(swiperContainer, {
+      // Swiper parameters
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      speed: 600,
+      centeredSlides: true,
+      initialSlide: 2,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: nextButton,
+        prevEl: prevButton,
+      },
+
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        // when window width is >= 1280px
+        1280: {
+          slidesPerView: 3.2,
+          spaceBetween: 24,
+        },
+        // 1920: {
+        //   slidesPerView: 5.2,
+        //   spaceBetween: 24,
+        // },
+      },
+
+      // Optional: Enable keyboard control
+      keyboard: {
+        enabled: true,
+      },
+
+      // Optional: Enable mousewheel control
+      mousewheel: {
+        forceToAxis: true,
+      },
+
+      // Accessibility
+      a11y: {
+        prevSlideMessage: "Previous slide",
+        nextSlideMessage: "Next slide",
+      },
+    });
+
+    console.log("Swiper initialized successfully for section");
+  });
+  ```
+
