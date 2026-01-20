@@ -79,10 +79,31 @@
     outline: 2px solid var(--_colors---dark);
 }
 
-/* Rich Text Spacing Styles */
-.rich-text {
-    /* Base container - no width or font size changes */
+.project-pagination {
+    z-index: 30;
+    position: absolute;
+    top: 50% !important;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translate(0, -50%);
+    justify-content: center;
+    gap: 10px;
+    width: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    --swiper-pagination-bullet-inactive-color: #fff;
+    --swiper-pagination-bullet-inactive-opacity: .2;
+    --swiper-pagination-bullet-active-color: #fff;
+    --swiper-pagination-bullet-active-opacity: 1;
+    --swiper-pagination-bullet-size: 12px;
+    --swiper-pagination-bullet-border-radius: 50%;
+    --swiper-pagination-bullet-height: 12px;
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-color: #fff;
 }
+
+
 
 /* Headings - Proportional spacing based on hierarchy with responsive font sizes */
 .rich-text h1 {

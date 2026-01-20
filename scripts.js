@@ -1,6 +1,40 @@
 window.Webflow ||= [];
 window.Webflow.push(function () {
-    console.log('Scripts loaded successfully!');
+
+    console.log('Scripts loaded successfully! Local');
+
+    function animateCountUp(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const stat = entry.target;
+            const target = parseInt(stat.textContent.replace(/,/g, ''));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const updateCount = () => {
+              current += increment;
+              if (current < target) {
+                stat.textContent = Math.floor(current).toLocaleString();
+                requestAnimationFrame(updateCount);
+              } else {
+                stat.textContent = target.toLocaleString();
+              }
+            };
+            
+            updateCount();
+            observer.unobserve(stat);
+          }
+        });
+      }
+    
+      const observer = new IntersectionObserver(animateCountUp, {
+        threshold: 0.5
+      });
+    
+      document.querySelectorAll('[js-count-up]').forEach(stat => {
+        observer.observe(stat);
+      });
     
     // Initialize Accordion
     console.log('🔧 ACCORDION: Starting accordion initialization...');
@@ -236,6 +270,7 @@ window.Webflow.push(function () {
 
     projectSections.forEach(function (section) {
         const swiperContainer = section.querySelector(".project-slider");
+        const pagination = section.querySelector(".project-pagination");
         const nextButton = section.querySelector(".project-swiper-button-next");
         const prevButton = section.querySelector(".project-swiper-button-prev");
 
@@ -243,11 +278,18 @@ window.Webflow.push(function () {
 
         const swiper = new Swiper(swiperContainer, {
             // Swiper parameters
-            slidesPerView: 1.5,
+            slidesPerView: 1.1,
             spaceBetween: 12,
-            loop: true,
+            loop: false,
             speed: 600,
             initialSlide: 1,
+
+            // Pagination
+            pagination: {
+                el: pagination,
+                clickable: true,
+            },
+
             // Navigation arrows
             navigation: {
                 nextEl: nextButton,
@@ -258,7 +300,7 @@ window.Webflow.push(function () {
             breakpoints: {
                 // when window width is >= 640px
                 640: {
-                    slidesPerView: 1.8,
+                    slidesPerView: 1.5,
                 },
                 // when window width is >= 768px
                 768: {
