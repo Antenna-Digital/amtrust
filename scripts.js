@@ -293,7 +293,6 @@ window.Webflow.push(function () {
             spaceBetween: 12,
             loop: false,
             speed: 600,
-            centeredSlides: true,
             initialSlide: 1,
 
             // Pagination
