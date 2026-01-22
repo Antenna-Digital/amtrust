@@ -1,3 +1,30 @@
+
+
+.button .button_icon:not(.no-circle) {
+    background-color: var(--_buttons---icon-bg-color);
+    color: var(--_buttons---icon-color);
+    transition: ease-in-out all .3s;
+}
+
+.button:hover .button_icon:not(.no-circle) {
+    background-color: var(--_buttons---icon-bg-color-hover);
+    color: var(--_buttons---icon-color-hover);
+}
+.button .button_icon:not(.no-circle) svg {
+    transform: translateX(0);
+    transition: ease-in-out all .3s;
+}
+.button:hover .button_icon:not(.no-circle) svg {
+    transform: translateX(2px);
+}
+.fs-selectcustom_dropdown-toggle .fs-selectcustom_icon {
+    transform: rotate(0);
+    transition: ease-in-out all .3s;
+}
+.fs-selectcustom_dropdown-toggle.w--open .fs-selectcustom_icon {
+    transform: rotate(180deg);
+}
+
 .project-slider { overflow: visible !important; }
 
 /* Accordion Styles - BEM with single underscore */
@@ -15,6 +42,15 @@
     opacity: 0;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
+
+.accordion_item-active {
+    border-color: var(--_colors---dark);
+    border-bottom: 1px solid var(--_colors---dark);
+}
+.accordion_item-active + .accordion_item {
+    margin-top: -1px;
+}
+
 
 .accordion_item-active .accordion_content {
     opacity: 1;
@@ -36,12 +72,6 @@
 
 .accordion_item-active .accordion_minus {
     display: block;
-}
-
-/* Focus styles for accessibility */
-.accordion_title:focus {
-    outline: 2px solid #007bff;
-    outline-offset: 2px;
 }
 
 .is-list-pagination-disabled { 

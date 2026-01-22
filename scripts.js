@@ -1,7 +1,7 @@
 window.Webflow ||= [];
 window.Webflow.push(function () {
 
-    console.log('Scripts loaded successfully! Local');
+    console.log('Scripts loaded successfully!');
 
     function animateCountUp(entries, observer) {
         entries.forEach(entry => {
@@ -276,12 +276,24 @@ window.Webflow.push(function () {
 
         if (!swiperContainer) return;
 
+        // Duplicate the first slide and append it to the end
+        const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
+        const firstSlide = swiperWrapper.querySelector(".swiper-slide");
+        
+        if (firstSlide && swiperWrapper) {
+            const clonedSlide = firstSlide.cloneNode(true);
+            clonedSlide.classList.add("first-slide-duplicate");
+            swiperWrapper.appendChild(clonedSlide);
+            console.log("First slide duplicated and appended to end");
+        }
+
         const swiper = new Swiper(swiperContainer, {
             // Swiper parameters
             slidesPerView: 1.1,
             spaceBetween: 12,
             loop: false,
             speed: 600,
+            centeredSlides: true,
             initialSlide: 1,
 
             // Pagination
