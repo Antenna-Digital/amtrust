@@ -276,16 +276,16 @@ window.Webflow.push(function () {
 
         if (!swiperContainer) return;
 
-        // Duplicate the first slide and append it to the end
-        const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
-        const firstSlide = swiperWrapper.querySelector(".swiper-slide");
+        // // Duplicate the first slide and append it to the end
+        // const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
+        // const firstSlide = swiperWrapper.querySelector(".swiper-slide");
         
-        if (firstSlide && swiperWrapper) {
-            const clonedSlide = firstSlide.cloneNode(true);
-            clonedSlide.classList.add("first-slide-duplicate");
-            swiperWrapper.appendChild(clonedSlide);
-            console.log("First slide duplicated and appended to end");
-        }
+        // if (firstSlide && swiperWrapper) {
+        //     const clonedSlide = firstSlide.cloneNode(true);
+        //     clonedSlide.classList.add("first-slide-duplicate");
+        //     swiperWrapper.appendChild(clonedSlide);
+        //     console.log("First slide duplicated and appended to end");
+        // }
 
         const swiper = new Swiper(swiperContainer, {
             // Swiper parameters
